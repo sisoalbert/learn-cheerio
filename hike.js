@@ -17,13 +17,14 @@ async function scrapeData() {
     },
   };
   try {
+    // Fetch HTML of the page we want to scrape - Option 1
+
     const result = await request.get(
       "https://www.alltrails.com/lists/100-best-hikes--3"
     );
     const $ = cheerio.load(result);
 
-    // Fetch HTML of the page we want to scrape
-    // const { data } = await axios.get(url, options);
+    // const data = await axios.get(url, options);
     // // Load HTML we fetched in the previous line
     // const $ = cheerio.load(data);
     console.log(pretty($.html()));
